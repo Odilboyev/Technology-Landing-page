@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+#wrapper{
+    background: url(./img/background.png);
+    background-size: cover;
+    height: 100vh;
+    overflow-y: hidden;
+    
+}
+#navbar{
+    display: grid;
+    grid-template-columns: 100px auto;
+    padding: 2rem 4rem;
+    animation: NavStart 2s ease-in-out;
+    
+}
+.nav-logo img{
+    width: 100%;
+}
+.nav-links{
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    float: right;
+}
+.nav-link{
+    margin: 20px 30px;
+    width: 60px;
+    text-align: center;
+    position: relative;
+}
+.nav-link::before{
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: blue;
+    transition: all 0.4s ;
+}
+.nav-link:hover:before{
+    width: 100%;
+    left: 0;
+}
+.nav-link .link{
+    color: #fff;
+    text-decoration: none;
+}
+#main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.main-content{
+    text-align: right;
+    padding: 4rem;
+    color: #fff;
+    animation: TextStart 2s ease-in-out;
+
+}
+.main-img img{
+    width: 100%;
+    transform: translate(30px, -130px);
+    animation: ImgStart 2s ease-in-out;
+}
+.main-text{
+    text-transform: uppercase;
+}
+.main-text h4{
+    font-size: 20px;
+    line-height: 50px;
+}
+.main-text h1{
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 80px;
+}
+.main-text p{
+    font-size: 14px;
+}
+.main-btn {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 20px 0;
+}
+.main-btn img{
+    width: 16px;
+}
+@keyframes ImgStart{
+    from{
+        opacity: 0;
+        margin-left: -80px;
+    }
+    to{
+        opacity: 1;
+        margin-left: 0;
+    }
+}
+@keyframes TextStart{
+    from{
+        opacity: 0;
+        transform:translateY(80px) ;
+    }
+    to{
+        opacity: 1;
+        transform:translateY(0) ;
+    }
+}
+@keyframes NavStart{
+    from{
+        opacity: 0;
+        transform:translateY(-80px) ;
+    }
+    to{
+        opacity: 1;
+        transform:translateY(0) ;
+    }
+}
